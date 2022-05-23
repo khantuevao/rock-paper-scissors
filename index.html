@@ -34,8 +34,9 @@
         **/
         
 
-        function playRound(computer) {
+        function playRound() {
             let result;
+            computer = computerPlay();
             player = prompt('Make your choice', '').toLowerCase();
             if (computer === 'rock' && player === 'scissors') {
                 result = 'You lose! Rock beats Scissors';
@@ -64,7 +65,9 @@
         keeps the score and reports a winner or loser at the end
         (use loops)
         **/
-
+        function game() {
+            
+        }
        
     </script>
 
