@@ -22,6 +22,10 @@
             } else {
                 message = 'scissors';
             }
+            const str1 = message.slice(0, 1);
+            const str2 = str1.toUpperCase();
+            compResult = ('Computer draws' + ' ' + str2 + message.slice(1));
+            console.log(compResult);
             return message;
         }
 
@@ -31,10 +35,11 @@
         2 - from player input, compares them and returns a winner message
         (make function case unsensitive)
         **/
-        let humanPlay = prompt('Make your choice', '').toLowerCase();
+        
 
-        function playRound(computer, player) {
+        function playRound(computer) {
             let result;
+            player = prompt('Make your choice', '').toLowerCase();
             if (computer === 'rock' && player === 'scissors') {
                 result = 'You lose! Rock beats Scissors';
             } else if (computer === 'rock' && player === 'paper') {
@@ -45,7 +50,7 @@
                 result = 'You lose! Paper beats Rock';computer = computerPlay();
             player = playerChoice;
             } else if (computer === 'scissors' && player === 'rock') {
-                result = 'You win! Rock beats scissors';
+                result = 'You win! Rock beats Scissors';
             } else if (computer === 'scissors' && player === 'paper') {
                 result ='You lose! Scissors beat Paper';
             } else if (computer === player) {
@@ -62,21 +67,7 @@
         (use loops)
         **/
 
-        function game(play) {
-            let computerWins = 0;
-            let humanWins = 0;
-            let winner;
-            let score = play.slice(0,9);
-            (score === 'You lose!')? computerWins++ : humanWins++;
-            for (let i = 1; i <= 5; i++) {
-                console.log(play);
-            }
-            (humanWins > computerWins)? winner = 'You win!' : winner = 'You lose!';
-            if (i = 5) {
-                console.log(winner);
-            }
-        }
-
+       
     </script>
 
 
