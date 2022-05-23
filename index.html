@@ -9,7 +9,35 @@
 <body>
     
     <script>
-        
+        /**
+        create a function that randomizes RPS and returns a value
+        **/
+        function computerPlay() {
+            let result = Math.floor(Math.random() * 3);
+            let message;
+            if (result === 0) {
+                message = 'Rock';
+            } else if (result === 1) {
+                message = 'Paper';
+            } else {
+                message = 'Scissors';
+            }
+            return message;
+        }
+
+        function showMessage() {
+  let message = "Hello, I'm JavaScript!";
+  alert( message );
+}
+        /**
+        create a function that takes 2 parameters from fuction above and
+        player input, compares them and returns a winner message
+        (make function case unsensitive)
+
+        create a function that wraps previous function, repeats it 5 times,
+        keeps the score and reports a winner or loser at the end
+        (use loops)
+        **/
     </script>
 
 
