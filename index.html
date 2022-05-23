@@ -22,10 +22,7 @@
             } else {
                 message = 'scissors';
             }
-            const str1 = message.slice(0, 1);
-            const str2 = str1.toUpperCase();
-            compResult = ('Computer draws' + ' ' + str2 + message.slice(1));
-            console.log(compResult);
+            console.log('Computer draws' + ' ' + message);
             return message;
         }
 
@@ -58,6 +55,7 @@
             } else {
                 result = 'Wrong input. Try again';
             }
+            console.log('You draw' + ' ' + player);
             return result;
         }
 
