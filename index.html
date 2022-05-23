@@ -31,8 +31,30 @@
         2 - from player input, compares them and returns a winner message
         (make function case unsensitive)
         **/
+        let playerChoice = prompt('Make your choice', '').toLowerCase();
 
-        
+        function oneRound(computer, player) {
+            let result;
+            if (computer === 'rock' && player === 'scissors') {
+                result = 'You lose! Rock beats Scissors';
+            } else if (computer === 'rock' && player === 'paper') {
+                result = 'You win! Paper beats Rock';
+            } else if (computer === 'paper' && player === 'scissors') {
+                result = 'You win! Scissors beat Rock';
+            } else if (computer === 'paper' && player === 'rock') {
+                result = 'You lose! Paper beats Rock';computer = computerPlay();
+            player = playerChoice;
+            } else if (computer === 'scissors' && player === 'rock') {
+                result = 'You win! Rock beats scissors';
+            } else if (computer === 'scissors' && player === 'paper') {
+                result ='You lose! Scissors beat Paper';
+            } else if (computer === player) {
+                result = 'It\s a draw!';
+            } else {
+                result = 'Wrong input. Try again';
+            }
+            return alert(result);
+        }
 
         /**
         create a function that wraps previous function, repeats it 5 times,
