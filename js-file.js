@@ -12,12 +12,8 @@ function computerPlay() {
     return result;
 }
 
-function humanPlay() {
-    let ask = prompt('Make your choice', '');
-    let result = ask.toLowerCase();
-    console.log('You draw ' + result);
-    return result;
-}
+let humanPlay = '';
+
 
 let total = 0;
 let computerWin = 0;
@@ -25,7 +21,7 @@ let humanWin = 0;
 
 function playRound() {
     let computer = computerPlay();
-    let human = humanPlay();
+    let human = humanPlay;
     let result;
     if (computer === 'rock' && human === 'scissors') {
         result = 'You lose! Rock beats Scissors';
@@ -77,3 +73,21 @@ let result = `Total score is ${humanWin} to ${computerWin}. ${message}`;
 console.log(result);
 return result;
 }
+
+const btnRock = document.querySelector('#rock');
+btnRock.addEventListener('click' , () => {
+    humanPlay = 'rock';
+    playRound();
+});
+
+const btnPaper = document.querySelector('#paper');
+btnPaper.addEventListener('click' , () => {
+    humanPlay = 'paper';
+    playRound();
+});
+
+const btnScissors = document.querySelector('#scissors');
+btnScissors.addEventListener('click' , () => {
+    humanPlay = 'scissors';
+    playRound();
+});
