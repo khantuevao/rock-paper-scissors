@@ -8,7 +8,6 @@ function computerPlay() {
     } else {
         result = 'scissors';
     }
-    console.log('Computer draws ' + result);
     const firstResult = document.querySelector('#firstResult');
     firstResult.textContent = ('Computer draws ' + result);
     return result;
@@ -53,12 +52,11 @@ function playRound() {
     } else {
         result = 'Wrong input. Try again';
     }
-    console.log(result);
     const secondResult = document.querySelector('#secondResult');
     secondResult.textContent = result;
     if (computerWin < 5 || humanWin < 5) {
         const finalResult = document.querySelector('#finalResult');
-        finalResult.textContent = `${humanWin} - ${computerWin}`;
+        finalResult.textContent = `Player ${humanWin} - ${computerWin} Computer`;
     }
     if (computerWin === 5 || humanWin === 5) {
         game();
@@ -76,7 +74,6 @@ function game() {
         message = 'It\'s a draw!';
     }
     let result = `Total score is ${humanWin} to ${computerWin}. ${message}`;
-    console.log(result);
     const finalResult = document.querySelector('#finalResult');
     finalResult.textContent = result;
     total = 0;
