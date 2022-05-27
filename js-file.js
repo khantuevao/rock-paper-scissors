@@ -58,24 +58,26 @@ function playRound() {
     console.log(result);
     const secondResult = document.querySelector('#secondResult');
     secondResult.textContent = result;
+    if (total === 5) {
+        game();
+    }
     return result;
 }
 
 function game() {
-for (i = 0; i < 5; i++) {
-    playRound();
-}
-let message;
-if (humanWin > computerWin) {
-    message = 'You win!';
-} else if (humanWin < computerWin) {
-    message = 'You lose!';
-} else {
-    message = 'It\'s a draw!';
-}
-let result = `Total score is ${humanWin} to ${computerWin}. ${message}`;
-console.log(result);
-return result;
+    let message;
+    if (humanWin > computerWin) {
+        message = 'You win!';
+    } else if (humanWin < computerWin) {
+        message = 'You lose!';
+    } else {
+        message = 'It\'s a draw!';
+    }
+    let result = `Total score is ${humanWin} to ${computerWin}. ${message}`;
+    console.log(result);
+    const finalResult = document.querySelector('#finalResult');
+    finalResult.textContent = result;
+    return result;
 }
 
 const btnRock = document.querySelector('#rock');
