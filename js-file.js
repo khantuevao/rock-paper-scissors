@@ -56,6 +56,10 @@ function playRound() {
     console.log(result);
     const secondResult = document.querySelector('#secondResult');
     secondResult.textContent = result;
+    if (computerWin < 5 || humanWin < 5) {
+        const finalResult = document.querySelector('#finalResult');
+        finalResult.textContent = `${humanWin} - ${computerWin}`;
+    }
     if (computerWin === 5 || humanWin === 5) {
         game();
     }
@@ -75,6 +79,9 @@ function game() {
     console.log(result);
     const finalResult = document.querySelector('#finalResult');
     finalResult.textContent = result;
+    total = 0;
+    computerWin = 0;
+    humanWin = 0;
     return result;
 }
 
