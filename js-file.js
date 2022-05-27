@@ -14,8 +14,6 @@ function computerPlay() {
     return result;
 }
 
-
-
 let humanPlay;
 let total = 0;
 let computerWin = 0;
@@ -58,7 +56,7 @@ function playRound() {
     console.log(result);
     const secondResult = document.querySelector('#secondResult');
     secondResult.textContent = result;
-    if (total === 5) {
+    if (computerWin === 5 || humanWin === 5) {
         game();
     }
     return result;
