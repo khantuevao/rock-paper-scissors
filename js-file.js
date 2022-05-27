@@ -9,12 +9,14 @@ function computerPlay() {
         result = 'scissors';
     }
     console.log('Computer draws ' + result);
+    const firstResult = document.querySelector('#firstResult');
+    firstResult.textContent = ('Computer draws ' + result);
     return result;
 }
 
-let humanPlay = '';
 
 
+let humanPlay;
 let total = 0;
 let computerWin = 0;
 let humanWin = 0;
@@ -54,6 +56,8 @@ function playRound() {
         result = 'Wrong input. Try again';
     }
     console.log(result);
+    const secondResult = document.querySelector('#secondResult');
+    secondResult.textContent = result;
     return result;
 }
 
