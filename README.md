@@ -1,2 +1,3 @@
-# rock-paper-scissors
-rock-paper-scissors playable in console
+# live preview
+
+https://khantuevao.github.io/rock-paper-scissors/
