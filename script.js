@@ -1,3 +1,6 @@
+let playerScore = 0;
+let computerScore = 0;
+
 //randomly return 'rock', 'paper' or 'scissors' for computer
 function getComputerChoice() {
     let result = Math.floor(Math.random() * 3);
@@ -10,15 +13,38 @@ function getComputerChoice() {
     }
 }
 
-//play a round, decide the winner and return a string with results
+//get player choice from prompt and lower case it for further comparison
+function getPlayerChoice() {
+    return prompt('Choose rock, paper or scissors', '').toLowerCase()
+}
+
+//play a round, decide the winner & return the result
 function playRound(playerSelection, computerSelection) {
-    let player = playerSelection.toLowerCase();
-    let computer = computerSelection;
-    if ((player === 'rock' && computer === 'scissors') || (player === 'paper' && computer === 'rock') || (player === 'scissors' && computer === 'paper')) {
-        return `You win! ${player} beats ${computer}`
-    } else if ((player === 'rock' && computer === 'paper') || (player === 'paper' && computer === 'scissors') || (player === ' scissors' && computer === 'rock')) {
-        return `You lose! ${computer} beats ${player}`
+    if ((playerSelection === 'rock' && computerSelection === 'scissors') || 
+        (playerSelection === 'paper' && computerSelection === 'rock') || 
+        (playerSelection === 'scissors' && computerSelection === 'paper')) {
+        console.log(`You win! ${playerSelection} beats ${computerSelection}`)
+        playerScore++
+    } else if ((playerSelection === 'rock' && computerSelection === 'paper') || 
+               (playerSelection === 'paper' && computerSelection === 'scissors') || 
+               (playerSelection === ' scissors' && computerSelection === 'rock')) {
+        console.log(`You lose! ${computerSelection} beats ${playerSelection}`)
+        computerScore++
     } else {
-        return 'It\'s a draw'
+        console.log('It\'s a draw')
+    }
+}
+
+//play 5 rounds, keep the score & return the result
+function game() {
+    for (let i = 0; i < 5; i++) {
+        playRound(getPlayerChoice(), getComputerChoice())
+    }
+    if (playerScore > computerScore) {
+        console.log(`Player wins ${playerScore} to ${computerScore}`)
+    } else if (computerScore > playerScore) {
+        console.log(`Computer wins ${computerScore} to ${playerScore}`)
+    } else {
+        console.log(`It's a draw ${playerScore} to ${computerScore}`)
     }
 }
